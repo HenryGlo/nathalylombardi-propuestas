@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuestas · Nathaly Lombardi</title>
+<meta name="description" content="Cuatro propuestas de landing para la asesoría estratégica de Nathaly Lombardi.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2E1912">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cafe:#2E1912;--ladrillo:#A34434;--crema:#F2EFC7;--papel:#FBFAF4;--arena:#C9B79F;--cielo:#97AEC9;--piedra:#6B5F56;
+  --display:'Instrument Serif',Georgia,serif;--sans:'Manrope',-apple-system,sans-serif;
+  --r:18px;--ease:cubic-bezier(.2,.8,.2,1);
+  --sombra:0 1px 2px rgba(46,25,18,.06),0 8px 20px -8px rgba(46,25,18,.18),0 28px 60px -30px rgba(46,25,18,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--cafe);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ladrillo);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1280px;margin-inline:auto;padding:clamp(3.5rem,8vw,6.5rem) clamp(1rem,5vw,3rem)}
+.kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ladrillo);margin:0 0 1.2rem;font-weight:700}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,6.5vw,5rem);line-height:1;margin:0 0 1.4rem;letter-spacing:-.01em}
+h1 i{color:var(--ladrillo)}
+.intro{max-width:62ch;color:var(--piedra);margin:0;font-size:1.05rem}
+.grid{display:grid;gap:1.25rem;margin-top:clamp(2.5rem,6vw,4.5rem)}
+@media(min-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1180px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);text-decoration:none;overflow:hidden;box-shadow:var(--sombra);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 1px 2px rgba(46,25,18,.06),0 16px 30px -10px rgba(46,25,18,.22),0 40px 80px -30px rgba(46,25,18,.45)}
+.muestra{height:220px;position:relative;overflow:hidden;display:grid;place-items:center;isolation:isolate}
+.muestra span{position:relative;z-index:2;font-family:var(--display);font-size:2rem;line-height:1}
+.a .muestra{background:radial-gradient(90% 80% at 30% 30%,#3d2a2a,#1c1411 70%);color:var(--crema)}
+.a .muestra::before{content:'';position:absolute;inset:0;background-image:radial-gradient(1.4px 1.4px at 12% 20%,#F2EFC7,transparent),radial-gradient(1px 1px at 70% 30%,#F2EFC7,transparent),radial-gradient(1.2px 1.2px at 40% 75%,#C9B79F,transparent),radial-gradient(1px 1px at 85% 70%,#F2EFC7,transparent),radial-gradient(1.4px 1.4px at 25% 55%,#97AEC9,transparent),radial-gradient(1px 1px at 58% 12%,#F2EFC7,transparent)}
+.a .muestra::after{content:'';position:absolute;width:150%;height:60%;border:1px solid rgba(201,183,159,.4);border-radius:50%;transform:rotate(-14deg)}
+.b .muestra{background:#F4F1E4;color:var(--cafe);background-image:repeating-radial-gradient(circle at 70% 60%,transparent 0 14px,rgba(163,68,52,.18) 14px 15px),linear-gradient(rgba(46,25,18,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(46,25,18,.06) 1px,transparent 1px);background-size:auto,28px 28px,28px 28px}
+.b .muestra span{font-style:italic}
+.c .muestra{background:linear-gradient(180deg,#E3EAF0 0%,#E9DCC6 55%,#A34434 82%,#2E1912 100%);color:var(--cafe)}
+.d .muestra{background:#EFE9DA;color:var(--cafe)}
+.d .muestra i{position:absolute;width:74px;height:70px;border-radius:3px;box-shadow:0 1px 1px rgba(0,0,0,.08),0 8px 14px -6px rgba(46,25,18,.35)}
+.d .muestra i:nth-child(1){background:#F2E27A;left:12%;top:16%;transform:rotate(-8deg)}
+.d .muestra i:nth-child(2){background:#E9B7A6;right:14%;top:12%;transform:rotate(6deg)}
+.d .muestra i:nth-child(3){background:#C9D8E3;left:22%;bottom:10%;transform:rotate(5deg)}
+.d .muestra i:nth-child(4){background:#DCEDC1;right:20%;bottom:14%;transform:rotate(-5deg)}
+.cuerpo{padding:1.6rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
+.letra{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ladrillo);margin:0 0 .5rem;font-weight:700}
+.card h2{font-family:var(--display);font-weight:400;font-size:1.9rem;margin:0 0 .8rem;line-height:1.05}
+.card p{font-size:.93rem;color:var(--piedra);margin:0 0 1.4rem;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.tags i{font-style:normal;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--piedra);border:1px solid rgba(46,25,18,.16);padding:.3rem .6rem;border-radius:99px}
+.ver{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-weight:700;font-size:.9rem;color:var(--cafe);align-self:flex-start}
+.ver svg{transition:transform .3s var(--ease)}
+.card:hover .ver svg{transform:translateX(4px)}
+.nota{margin-top:3.5rem;padding:1.6rem 1.8rem;border-left:3px solid var(--ladrillo);background:#F4F1E4;border-radius:0 var(--r) var(--r) 0;font-size:.95rem;color:var(--piedra);max-width:74ch}
+.nota strong{color:var(--cafe)}
+footer{border-top:1px solid rgba(46,25,18,.1)}
+footer .wrap{padding-block:2.2rem;font-size:.82rem;color:var(--piedra)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="kicker">Nathaly Lombardi · Asesoría estratégica</p>
+  <h1>Cuatro formas de contar <i>el mismo orden.</i></h1>
+  <p class="intro">Mismo negocio, misma oferta y mismas fotos, cuatro conceptos distintos de dirección de arte y de narrativa. Las cuatro salen de la misma idea que Nathaly ya usa (del caos al orden, del cielo a la tierra) y la llevan a sitios muy distintos. Elige una y la desarrollamos a fondo.</p>
+
+  <div class="grid">
+    <a class="card a" href="propuesta-a/">
+      <div class="muestra"><span>Constelación</span></div>
+      <div class="cuerpo">
+        <p class="letra">Propuesta A</p>
+        <h2>Constelación</h2>
+        <div class="tags"><i>Noche</i><i>Canvas</i><i>Lujo silencioso</i></div>
+        <p>Un cielo nocturno con cien estrellas sueltas, que son tus ideas. Al bajar, se ordenan en órbitas alrededor de un centro. El scroll hace lo mismo que hace ella en una sesión. La más elegante y la más "marca".</p>
+        <span class="ver">Ver propuesta <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="card b" href="propuesta-b/">
+      <div class="muestra"><span>El Atlas</span></div>
+      <div class="cuerpo">
+        <p class="letra">Propuesta B</p>
+        <h2>El Atlas</h2>
+        <div class="tags"><i>Papel</i><i>Cartografía</i><i>Politóloga</i></div>
+        <p>"Analizo marcas como si fueran países", llevado al pie de la letra: un informe de situación de tu negocio con mapas, curvas de nivel, fronteras y una ruta que se traza sola. La que más la diferencia de cualquier otra consultora.</p>
+        <span class="ver">Ver propuesta <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="card c" href="propuesta-c/">
+      <div class="muestra"><span>El descenso</span></div>
+      <div class="cuerpo">
+        <p class="letra">Propuesta C</p>
+        <h2>Del cielo a la tierra</h2>
+        <div class="tags"><i>Degradado vivo</i><i>Tipografía gigante</i><i>Sticky</i></div>
+        <p>La página entera es un descenso. Arriba es cielo y abajo tierra, el color cambia de forma continua mientras bajas y un altímetro te dice dónde estás. Empiezas con la cabeza en las nubes y acabas con los pies en el suelo. La más luminosa.</p>
+        <span class="ver">Ver propuesta <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+    <a class="card d" href="propuesta-d/">
+      <div class="muestra"><i></i><i></i><i></i><i></i><span>El escritorio</span></div>
+      <div class="cuerpo">
+        <p class="letra">Propuesta D</p>
+        <h2>El escritorio</h2>
+        <div class="tags"><i>Post-its</i><i>Interactiva</i><i>Línea Campus</i></div>
+        <p>El hero es tu mesa hecha un caos: post-its con las ideas de siempre que puedes arrastrar. Pulsas "Ordenar mi mesa" y cada uno vuela a su sitio. La demostración del servicio en diez segundos. La más cercana en energía a Crea y Monetiza.</p>
+        <span class="ver">Ver propuesta <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </a>
+  </div>
+
+  <p class="nota">
+    <strong>Qué hay detrás.</strong> El contenido sale de la web actual de Nathaly: sus dos servicios, precios, el plan de 90 días, su bio y sus fotos. Todavía no hay testimonios reales, así que ninguna propuesta los tiene y la prueba recae en ella y en su método. Quedan por confirmar el canal de reserva (hoy Beacons), el WhatsApp, el destino de la newsletter, la política de cancelación y los textos legales. Todo está listado en el brief de trabajo.
+  </p>
+</main>
+
+<footer>
+  <div class="wrap">Documento de trabajo · Nathaly Lombardi · Septiembre de 2026.</div>
+</footer>
+<!-- Powered by LandingHub -->
+<style>
+.lh-powered{background:#000;padding:16px;text-align:center;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1}
+.lh-powered a{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.8;transition:opacity .2s ease}
+.lh-powered a:hover{opacity:1}
+.lh-powered svg{width:18px;height:18px;display:block;flex:none}
+.lh-powered strong{font-weight:700}
+</style>
+<div class="lh-powered">
+  <a href="https://landinghub.codeflakes.io/" target="_blank" rel="noopener" aria-label="Powered by LandingHub">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#6B21E8"/><text x="16" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="21" fill="#fff">H</text></svg>
+    <span>Powered by <strong>LandingHub</strong></span>
+  </a>
+</div>
+</body>
+</html>
