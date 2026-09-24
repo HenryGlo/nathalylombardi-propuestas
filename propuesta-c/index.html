@@ -225,20 +225,33 @@ h2 em{color:var(--acento)}
 .banco{position:absolute;left:-16%;right:-16%;bottom:-9%;height:34%;pointer-events:none;
   background:radial-gradient(60% 70% at 30% 70%, #fff 0 38%, rgba(255,255,255,0) 72%), radial-gradient(55% 60% at 72% 64%, #fff 0 36%, rgba(255,255,255,0) 70%), radial-gradient(40% 50% at 52% 90%, #fff 0 45%, rgba(255,255,255,0) 75%);
   filter:blur(8px)}
-.nota-foto{position:absolute;left:-6%;top:12%;max-width:15rem;padding:.9rem 1.1rem;border-radius:var(--r-md);background:rgba(255,255,255,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:var(--sh-2);
-  font-family:var(--f-acento);font-style:italic;font-size:1.02rem;line-height:1.3;color:var(--cafe);transform:rotate(-3deg)}
-.nota-foto::before{content:"";display:block;width:22px;height:2px;background:var(--ladrillo);margin-bottom:.5rem}
 .descenso{display:none}
 @media (min-width:960px){
   .hero-grid{grid-template-columns:1.3fr .7fr;gap:clamp(2rem,4vw,4.5rem)}
   .hero h1{font-size:clamp(4rem, 6.4vw, 8.25rem)}
   .hero-foto{justify-self:end}
-  .nota-foto{left:-22%}
   .descenso{display:inline-flex;align-items:center;gap:.7rem;margin-top:var(--s-8);font-size:var(--t-micro);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);text-decoration:none;min-height:44px}
   .descenso i{position:relative;width:1.5px;height:44px;background:var(--line);overflow:hidden}
   .descenso i::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:var(--ladrillo);animation:gota 2.2s var(--e-out) infinite}
 }
 @keyframes gota{0%{top:-40%}70%,100%{top:100%}}
+
+/* ---------- Estela: la frase escrita en el cielo ---------- */
+.estela{padding-block:clamp(3.5rem,9vw,7rem);overflow-x:clip}
+.estela-lienzo{position:relative;margin-top:var(--s-5);padding-block:clamp(2.5rem,7vw,5rem)}
+.estela-svg{position:absolute;left:-6%;top:0;width:112%;height:100%;overflow:visible;pointer-events:none}
+.estela-svg path{fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--e,0))}
+.estela-humo{stroke:#fff;stroke-width:26;opacity:1;filter:blur(6px) drop-shadow(0 8px 14px rgba(111,141,179,.6))}
+.estela-nucleo{stroke:#fff;stroke-width:4;opacity:1;filter:drop-shadow(0 1px 3px rgba(111,141,179,.7))}
+.estela-avion{position:absolute;left:0;top:0;width:30px;height:30px;color:var(--cafe);pointer-events:none;
+  transform:translate(calc(var(--ax,0px) - 50%), calc(var(--ay,0px) - 50%)) rotate(var(--ag,0deg));opacity:var(--ao,0);transition:opacity .3s ease;will-change:transform}
+.estela-frase{position:relative;font-family:var(--f-acento);font-weight:400;font-style:italic;font-size:clamp(2.3rem,6.4vw,5.6rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch;color:var(--ink);
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(var(--e,0) * 125% - 25%),transparent calc(var(--e,0) * 125%));mask-image:linear-gradient(90deg,#000 calc(var(--e,0) * 125% - 25%),transparent calc(var(--e,0) * 125%))}
+.estela-frase em{color:var(--ladrillo)}
+.estela-pie{margin-top:var(--s-5);max-width:40ch;color:var(--ink-2);font-size:var(--t-lead);line-height:1.5}
+@media (min-width:960px){.estela-frase{margin-inline:auto;text-align:center;max-width:18ch}.estela .ceja,.estela-pie{display:flex;justify-content:center;text-align:center;margin-inline:auto}}
+@media (prefers-reduced-motion:reduce){.estela{--e:1}.estela-avion{display:none}}
+@media (max-width:959px){.banco{bottom:-15%;height:24%;left:-10%;right:-10%}}
 
 /* ---------- Letras que caen / palabras que aterrizan ---------- */
 .w{display:inline-block;white-space:nowrap}
@@ -602,8 +615,22 @@ html.estatico .cierre{background:var(--ladrillo);color:var(--crema)}
         <img src="../assets/nathaly-hero-960.webp" srcset="../assets/nathaly-hero-560.webp 560w, ../assets/nathaly-hero-960.webp 960w" sizes="(min-width: 960px) 40vw, 86vw" width="960" height="1707" alt="Nathaly Lombardi de pie junto a una ventana, con traje blanco, una taza en la mano y un cuaderno abierto" fetchpriority="high" decoding="async">
       </div>
       <div class="banco" data-par-banco aria-hidden="true"></div>
-      <figcaption class="nota-foto">Pensar mejor también es una ventaja competitiva.</figcaption>
     </figure>
+  </div>
+</section>
+
+<section class="sec estela" id="estela" data-bg="#E6EDF5" data-nube=".95" data-glow="0" data-tramo="Cielo" data-nombre="La perspectiva" aria-labelledby="estela-t">
+  <div class="wrap">
+    <p class="ceja"><b>9.000 m</b> Altitud de crucero</p>
+    <div class="estela-lienzo">
+      <svg class="estela-svg" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+        <path class="estela-humo" pathLength="1" d="M-60 250 C 160 120, 330 280, 560 170 S 960 30, 1260 90"/>
+        <path class="estela-nucleo" pathLength="1" d="M-60 250 C 160 120, 330 280, 560 170 S 960 30, 1260 90"/>
+      </svg>
+      <svg class="estela-avion" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      <h2 class="estela-frase" id="estela-t">Pensar mejor también es una <em>ventaja competitiva.</em></h2>
+    </div>
+    <p class="estela-pie">Desde aquí arriba se ve el mapa entero. Por eso la sesión empieza aquí, y no en la lista de pendientes.</p>
   </div>
 </section>
 
@@ -1241,6 +1268,32 @@ html.estatico .cierre{background:var(--ladrillo);color:var(--crema)}
       est.className = 'estado mal'; est.innerHTML = 'No se pudo enviar ahora mismo. Inténtalo de nuevo o escribe a <a href="mailto:hola@nathalylombardi.com">hola@nathalylombardi.com</a>.';
     } finally { btn.removeAttribute('aria-busy'); btn.firstChild.textContent = txt; }
   });
+
+  /* ---------- Estela: el avión escribe la frase al hacer scroll ---------- */
+  (() => {
+    const sec = d.getElementById('estela'); if (!sec) return;
+    if (reduce) { sec.style.setProperty('--e', 1); return; }
+    const lienzo = sec.querySelector('.estela-lienzo'), svg = sec.querySelector('.estela-svg'), ruta = sec.querySelector('.estela-nucleo');
+    const L = ruta.getTotalLength(); let pend = false;
+    const pintar = () => {
+      pend = false;
+      const r = sec.getBoundingClientRect(), vh = innerHeight;
+      if (r.bottom < 0 || r.top > vh) return;
+      const ini = vh * .88, fin = vh * .42 - r.height / 2;
+      const e = Math.min(1, Math.max(0, (ini - r.top) / (ini - fin)));
+      sec.style.setProperty('--e', e.toFixed(4));
+      const lr = lienzo.getBoundingClientRect(), sr = svg.getBoundingClientRect();
+      const sx = sr.width / 1200, sy = sr.height / 300;
+      const p = ruta.getPointAtLength(L * e), q = ruta.getPointAtLength(Math.min(L, L * e + 4));
+      const ang = Math.atan2((q.y - p.y) * sy, (q.x - p.x) * sx) * 180 / Math.PI;
+      lienzo.style.setProperty('--ax', (sr.left - lr.left + p.x * sx) + 'px');
+      lienzo.style.setProperty('--ay', (sr.top - lr.top + p.y * sy) + 'px');
+      lienzo.style.setProperty('--ag', (ang + 45) + 'deg');
+      lienzo.style.setProperty('--ao', e > .02 && e < .985 ? 1 : 0);
+    };
+    const pedir = () => { if (!pend) { pend = true; requestAnimationFrame(pintar); } };
+    addEventListener('scroll', pedir, { passive: true }); addEventListener('resize', pedir); pintar();
+  })();
 })();
 </script>
 <!-- Powered by LandingHub -->
