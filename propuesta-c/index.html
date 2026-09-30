@@ -248,8 +248,7 @@ h2 em{color:var(--acento)}
 .estela-frase{position:relative;font-family:var(--f-acento);font-weight:400;font-style:italic;font-size:clamp(2.3rem,6.4vw,5.6rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch;color:var(--ink);
   -webkit-mask-image:linear-gradient(90deg,#000 calc(var(--e,0) * 125% - 25%),transparent calc(var(--e,0) * 125%));mask-image:linear-gradient(90deg,#000 calc(var(--e,0) * 125% - 25%),transparent calc(var(--e,0) * 125%))}
 .estela-frase em{color:var(--ladrillo)}
-.estela-pie{margin-top:var(--s-5);max-width:40ch;color:var(--ink-2);font-size:var(--t-lead);line-height:1.5}
-@media (min-width:960px){.estela-frase{margin-inline:auto;text-align:center;max-width:18ch}.estela .ceja,.estela-pie{display:flex;justify-content:center;text-align:center;margin-inline:auto}}
+@media (min-width:960px){.estela-frase{margin-inline:auto;text-align:center;max-width:18ch}.estela .ceja{display:flex;justify-content:center;text-align:center;margin-inline:auto}}
 @media (prefers-reduced-motion:reduce){.estela{--e:1}.estela-avion{display:none}}
 @media (max-width:959px){.banco{bottom:-15%;height:24%;left:-10%;right:-10%}}
 
@@ -630,20 +629,19 @@ html.estatico .cierre{background:var(--ladrillo);color:var(--crema)}
       <svg class="estela-avion" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
       <h2 class="estela-frase" id="estela-t">Pensar mejor también es una <em>ventaja competitiva.</em></h2>
     </div>
-    <p class="estela-pie">Desde aquí arriba se ve el mapa entero. Por eso la sesión empieza aquí, y no en la lista de pendientes.</p>
   </div>
 </section>
 
-<section class="sec ruido" id="ruido" data-bg="#E2EAF3" data-nube=".85" data-glow="0" data-tramo="Cielo" data-nombre="El ruido" aria-labelledby="ruido-t">
+<section class="sec ruido" id="ruido" data-bg="#E2EAF3" data-nube=".85" data-glow="0" data-tramo="Cielo" data-nombre="Pies sobre la tierra" aria-labelledby="ruido-t">
   <div class="wrap">
     <div class="ruido-intro">
       <div>
-        <p class="ceja"><b>01</b> El ruido</p>
-        <h2 id="ruido-t" data-posar>Tu negocio vive en tu cabeza. <em>Y ahí ya no cabe.</em></h2>
+        <p class="ceja"><b>01</b> Pies sobre la tierra</p>
+        <h2 id="ruido-t" data-posar>Tu negocio vive en tu cabeza. <em>Y ningún negocio exitoso funciona de esa manera.</em></h2>
       </div>
       <div class="cuerpo" data-rev>
-        <p>Veinte pestañas abiertas. Tres cursos a medias. Una nota en el móvil que dice «idea: lanzar algo». Una herramienta de IA nueva cada semana, que iba a ahorrarte tiempo y se lo quedó entero.</p>
-        <p>No te falta información: te sobra. Y cuanto más consumes, menos claro ves por dónde seguir.</p>
+        <p>Veinte pestañas abiertas. Tres cursos a medias. Una nota en el móvil que dice «idea: lanzar algo». Una herramienta de IA nueva cada semana, que iba a ahorrarte tiempo y se lo quedó entero. Cincuenta referencias guardadas que nunca aplicas.</p>
+        <p>Lo sé, he estado allí. Y déjame decirte que no te falta información: te sobra. Y cuanto más consumes, menos claro ves por dónde seguir.</p>
       </div>
     </div>
   </div>
@@ -652,33 +650,34 @@ html.estatico .cierre{background:var(--ladrillo);color:var(--crema)}
     <div class="escena wrap">
       <div class="escena-t">
         <h3>Del caos <em>al orden.</em></h3>
-        <p>Así es una sesión, en pequeño: todo sobre la mesa y cada cosa en su sitio. Es un ejemplo; tu lista será otra.</p>
+        <p>Así se puede ver una sesión juntas.</p>
       </div>
       <div class="columnas">
         <div class="col col-ahora">
-          <p class="col-t">Ahora <i>lo que mueve la aguja</i></p>
+          <p class="col-t">Ahora <i>hacer lo realmente importante</i></p>
           <ul class="fichas">
+            <li class="ficha" data-f="0.46,0.52,-6"><span>Consolidar marca personal</span></li>
             <li class="ficha" data-f="0.12,0.10,-7"><span>Definir mi oferta</span></li>
-            <li class="ficha" data-f="0.70,0.62,5"><span>Revisar mis precios</span></li>
             <li class="ficha" data-f="0.42,0.34,-4"><span>Ordenar mis procesos</span></li>
+            <li class="ficha" data-f="0.70,0.62,5"><span>Revisar mis precios</span></li>
           </ul>
         </div>
         <div class="col col-despues">
-          <p class="col-t">Después <i>cuando haya base</i></p>
+          <p class="col-t">Después <i>cuando ya construimos bases</i></p>
           <ul class="fichas">
             <li class="ficha" data-f="0.78,0.08,6"><span>Newsletter semanal</span></li>
-            <li class="ficha" data-f="0.08,0.56,-5"><span>Automatizar la agenda</span></li>
             <li class="ficha" data-f="0.56,0.86,3"><span>Lanzar un curso</span></li>
+            <li class="ficha" data-f="0.08,0.56,-5"><span>Automatizar la agenda</span></li>
           </ul>
         </div>
         <div class="col col-fuera">
-          <p class="col-t">Fuera <i>por ahora, no</i></p>
+          <p class="col-t">Fuera <i>descartamos lo que no te ayuda a lograr objetivos</i></p>
           <ul class="fichas">
             <li class="ficha" data-f="0.30,0.72,8"><span>Otro curso más</span></li>
-            <li class="ficha" data-f="0.88,0.40,-8"><span>Rehacer el logo</span></li>
             <li class="ficha" data-f="0.20,0.30,4"><span>Probar otra IA</span></li>
-            <li class="ficha" data-f="0.62,0.20,-3"><span>Publicar todos los días</span></li>
             <li class="ficha" data-f="0.04,0.86,6"><span>Abrir un podcast</span></li>
+            <li class="ficha" data-f="0.88,0.40,-8"><span>Rehacer el logo</span></li>
+            <li class="ficha" data-f="0.62,0.20,-3"><span>Publicar todos los días</span></li>
           </ul>
         </div>
       </div>
