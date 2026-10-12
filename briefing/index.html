@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brief de inicio · Nathaly Lombardi</title>
+<meta name="description" content="Seis preguntas para que Nathaly prepare vuestra primera sesión. Se responde con calma y se guarda mientras escribes.">
+<!-- Página privada: solo llega quien recibe el enlace después de pagar. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#EDF2F8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fraunces:ital,opsz,wght@1,9..144,300..600&display=swap">
+<style>
+/* ============================================================
+   Brief de inicio · una pregunta por pantalla.
+   Mismo descenso que la home: cada paso baja un poco el fondo
+   del cielo a la tierra, y al enviar se aterriza (fondo café).
+   ============================================================ */
+:root{
+  --cafe:#2E1912; --ladrillo:#A34434; --ladrillo-hondo:#8A3529; --crema:#FBF6EA;
+  --arena:#C9B79F; --cielo:#97AEC9; --sol:#E9B872;
+
+  --bg:#EDF2F8; --glow:0;
+  --ink:#2E1912; --ink-2:rgba(46,25,18,.74); --ink-3:rgba(46,25,18,.6);
+  --line:rgba(46,25,18,.16); --acento:#A34434;
+
+  --f-display:"Bricolage Grotesque", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-acento:"Fraunces", Georgia, "Times New Roman", serif;
+  --t-preg:clamp(1.9rem, 5.2vw, 3.6rem);
+  --t-lead:clamp(1.06rem, 1.5vw, 1.25rem);
+  --t-campo:clamp(1.12rem, 1.9vw, 1.4rem);
+  --t-small:.9375rem; --t-micro:.78rem;
+
+  --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem; --s-6:2rem; --s-7:3rem;
+  --gutter:clamp(1.25rem, 5vw, 3rem);
+  --col:780px;
+
+  --r-sm:12px; --r-md:20px; --r-pill:999px;
+  --e-out:cubic-bezier(.16,1,.3,1);
+  --e-land:cubic-bezier(.34,1.56,.64,1);
+  --d-1:160ms; --d-2:280ms; --d-3:400ms;
+}
+html.tierra{
+  --ink:#FBF6EA; --ink-2:rgba(251,246,234,.8); --ink-3:rgba(251,246,234,.62);
+  --line:rgba(251,246,234,.18); --acento:#E9A58F;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;
+  background:var(--bg);color:var(--ink);
+  font-family:var(--f-display);font-size:1.0625rem;line-height:1.6;font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;
+  transition:background-color 900ms ease, color var(--d-3) ease;
+}
+svg{display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2{margin:0;font-weight:700;line-height:1.02;letter-spacing:-.035em;text-wrap:balance}
+em{font-family:var(--f-acento);font-style:italic;font-weight:400;letter-spacing:-.02em}
+::selection{background:var(--ladrillo);color:var(--crema)}
+:focus-visible{outline:3px solid var(--ladrillo);outline-offset:3px;border-radius:6px}
+html.tierra :focus-visible{outline-color:var(--sol)}
+[hidden]{display:none!important}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- Cielo de fondo ---------- */
+.atmos{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.sol{position:absolute;right:-22vmax;bottom:-34vmax;width:84vmax;height:84vmax;border-radius:50%;
+  background:radial-gradient(closest-side, rgba(255,214,150,.7), rgba(233,184,114,.26) 45%, rgba(233,184,114,0) 72%);
+  opacity:var(--glow);transition:opacity 900ms ease}
+.nube{position:absolute;border-radius:50%;background:#fff;filter:blur(26px);opacity:calc(.85 * (1 - var(--glow)));transition:opacity 900ms ease}
+.n1{width:42vw;height:11vw;min-width:260px;min-height:70px;left:-8vw;top:16vh}
+.n2{width:30vw;height:8vw;min-width:190px;min-height:52px;right:-6vw;top:58vh}
+html.tierra .sol,html.tierra .nube{opacity:0}
+
+/* ---------- Cabecera ---------- */
+.top{position:sticky;top:0;z-index:10;padding-top:env(safe-area-inset-top)}
+.top-in{display:flex;align-items:center;gap:var(--s-4);min-height:64px;width:min(1320px, 100% - 2*var(--gutter));margin-inline:auto}
+.marca{font-family:var(--f-acento);font-style:italic;font-size:1.2rem;text-decoration:none;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:.5rem;min-height:44px;white-space:nowrap}
+.marca-dot{width:9px;height:9px;border-radius:50%;background:var(--acento)}
+.cuenta{margin-left:auto;font-size:var(--t-micro);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.idioma{display:inline-flex;align-items:center;border-radius:var(--r-pill);box-shadow:inset 0 0 0 1.5px var(--line)}
+.cuenta[hidden] + .idioma{margin-left:auto}
+.idioma button{appearance:none;border:0;background:none;color:var(--ink-2);font:inherit;font-size:var(--t-micro);font-weight:600;letter-spacing:.12em;
+  min-width:44px;min-height:44px;padding:0 .7rem;border-radius:var(--r-pill);cursor:pointer;transition:color var(--d-1) ease,background-color var(--d-2) ease}
+.idioma button:hover{color:var(--ink)}
+.idioma button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (max-width:519px){.idioma button[aria-pressed="true"]{display:none}}
+.progreso{height:3px;background:var(--line)}
+.progreso i{display:block;height:100%;width:100%;background:var(--acento);transform-origin:left;transform:scaleX(var(--p,0));transition:transform 600ms var(--e-out)}
+
+/* ---------- Pasos ---------- */
+main{flex:1;display:flex}
+form{flex:1;display:flex}
+.paso{flex:none;display:flex;flex-direction:column;justify-content:center;width:min(var(--col), 100% - 2*var(--gutter));margin-inline:auto;
+  padding-block:clamp(1.5rem, 6vh, 4rem);min-width:0}
+.paso > *{animation:subir 620ms var(--e-out) both}
+.paso > *:nth-child(2){animation-delay:70ms}
+.paso > *:nth-child(3){animation-delay:140ms}
+.paso > *:nth-child(4){animation-delay:210ms}
+.paso > *:nth-child(5){animation-delay:280ms}
+.paso.atras > *{animation-name:bajar}
+@keyframes subir{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes bajar{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}
+
+.ceja{font-size:var(--t-micro);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s-4)}
+.ceja b{color:var(--acento);font-weight:700;margin-right:.5rem}
+.preg{font-size:var(--t-preg)}
+.ayuda{margin-top:var(--s-4);font-size:var(--t-lead);color:var(--ink-2);max-width:60ch}
+.opc{font-family:var(--f-acento);font-style:italic;color:var(--ink-3);font-size:1rem;margin-left:.35rem;letter-spacing:0;font-weight:400}
+
+.campo{margin-top:var(--s-6)}
+.campo label{display:block;font-size:var(--t-small);font-weight:600;margin-bottom:.35rem;color:var(--ink-2)}
+.campo input,.campo textarea{
+  display:block;width:100%;padding:.7rem 0;border:0;border-bottom:2px solid var(--line);border-radius:0;background:transparent;
+  font:inherit;font-size:var(--t-campo);line-height:1.5;color:var(--ink);caret-color:var(--acento);
+  transition:border-color var(--d-2) ease}
+.campo textarea{resize:none;min-height:4.6em;max-height:46vh;overflow-y:auto;field-sizing:content}
+.campo input::placeholder,.campo textarea::placeholder{color:var(--ink-3);opacity:.75}
+.campo input:hover,.campo textarea:hover{border-bottom-color:var(--ink-3)}
+.campo input:focus,.campo textarea:focus{outline:none;border-bottom-color:var(--acento)}
+.campo [aria-invalid="true"]{border-bottom-color:#C0392B}
+.err{min-height:1.4em;margin-top:.45rem;font-size:.9rem;color:#A8321F;font-weight:500}
+.dos{display:grid;gap:0 var(--s-6)}
+@media (min-width:680px){.dos{grid-template-columns:1fr 1fr}}
+.dos .campo{margin-top:var(--s-5)}
+.nota{margin-top:var(--s-3);font-size:var(--t-small);color:var(--ink-3)}
+.trampa{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.datos{list-style:none;margin:var(--s-6) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.datos li{padding:.5rem .95rem;border-radius:var(--r-pill);box-shadow:inset 0 0 0 1.5px var(--line);font-size:var(--t-small);color:var(--ink-2)}
+.datos b{color:var(--ink);font-weight:650}
+.acciones{margin-top:var(--s-7);display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-4)}
+
+/* ---------- Botones ---------- */
+.btn{--b-bg:var(--ladrillo);--b-ink:var(--crema);
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:.9rem 1.5rem;border-radius:var(--r-pill);
+  background:var(--b-bg);color:var(--b-ink);text-decoration:none;font-weight:650;font-size:1rem;letter-spacing:-.005em;border:0;cursor:pointer;font-family:inherit;
+  box-shadow:0 1px 0 rgba(255,255,255,.25) inset, 0 1px 2px rgba(80,20,10,.18), 0 10px 24px -10px rgba(163,68,52,.55);
+  transition:transform var(--d-2) var(--e-land), box-shadow var(--d-2) ease, background-color var(--d-2) ease}
+.btn svg{width:18px;height:18px;transition:transform var(--d-2) var(--e-out)}
+.btn:hover{transform:translateY(-2px);background:var(--ladrillo-hondo)}
+.btn:hover svg{transform:translateX(3px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn[aria-busy="true"]{opacity:.7;pointer-events:none}
+.btn-crema{--b-bg:var(--crema);--b-ink:var(--cafe);box-shadow:0 1px 2px rgba(20,10,6,.2), 0 14px 30px -12px rgba(20,10,6,.5)}
+.btn-crema:hover{background:#fff}
+.atras-btn{appearance:none;border:0;background:none;font:inherit;font-size:var(--t-small);font-weight:600;color:var(--ink-2);cursor:pointer;
+  display:inline-flex;align-items:center;gap:.45rem;min-height:48px;padding:0 .9rem 0 .5rem;border-radius:var(--r-pill);transition:color var(--d-1) ease, background-color var(--d-2) ease}
+.atras-btn svg{width:18px;height:18px}
+.atras-btn:hover{color:var(--ink);background:rgba(46,25,18,.06)}
+
+/* ---------- Barra inferior ---------- */
+.barra{position:sticky;bottom:0;z-index:10;padding-bottom:env(safe-area-inset-bottom);
+  background:color-mix(in srgb, var(--bg) 84%, transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border-top:1px solid var(--line);transition:background-color 900ms ease}
+.barra-in{display:flex;align-items:center;gap:var(--s-3);min-height:76px;width:min(var(--col), 100% - 2*var(--gutter));margin-inline:auto}
+.barra .tecla{margin-left:auto;font-size:var(--t-micro);color:var(--ink-3);display:none}
+.barra .tecla kbd{font:inherit;font-weight:650;padding:.15rem .45rem;border-radius:6px;box-shadow:inset 0 0 0 1.5px var(--line);color:var(--ink-2)}
+.barra .btn{margin-left:auto}
+@media (hover:hover) and (min-width:760px){.barra .tecla{display:block}.barra .tecla + .btn{margin-left:0}}
+.estado{width:min(var(--col), 100% - 2*var(--gutter));margin:0 auto;font-size:var(--t-small)}
+.estado.mal{padding:.9rem 1.1rem;margin-bottom:var(--s-3);border-radius:var(--r-md);background:rgba(192,57,43,.09);border:1px solid rgba(192,57,43,.35);color:#7E2416}
+
+/* ---------- Final ---------- */
+.final .preg{font-size:clamp(2.4rem, 7.4vw, 5.2rem)}
+.final .ayuda a{text-underline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-atras" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+</svg>
+
+<div class="atmos" aria-hidden="true"><div class="sol"></div><div class="nube n1"></div><div class="nube n2"></div></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="marca" href="../" aria-label="Nathaly Lombardi, ir a la web" data-en-aria-label="Nathaly Lombardi, go to the website"><span class="marca-dot" aria-hidden="true"></span>Nathaly Lombardi</a>
+    <p class="cuenta" id="cuenta" aria-live="polite" hidden></p>
+    <div class="idioma" role="group" aria-label="Idioma" data-en-aria-label="Language">
+      <button type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+    </div>
+  </div>
+  <div class="progreso" id="progreso" role="progressbar" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" aria-label="Avance del brief" data-en-aria-label="Brief progress"><i></i></div>
+</header>
+
+<main id="contenido">
+  <!-- El envío va a Activepieces, que crea el brief en PerfectFlow y lo enlaza con la clienta.
+       Los name de cada campo son los códigos del modelo `brief`: no renombrar sin tocar el flujo. -->
+  <form id="brief" novalidate data-endpoint="https://automation.nathaly-vozia.perfectflow.cloud/api/v1/webhooks/PEfhuJQodK9O0oqPbeRwo">
+
+    <section class="paso" data-paso="inicio" aria-labelledby="t-inicio">
+      <p class="ceja" data-en="Kickoff brief">Brief de inicio</p>
+      <h1 class="preg" id="t-inicio" tabindex="-1" data-en="Before we meet, tell me &lt;em&gt;where you are.&lt;/em&gt;">Antes de vernos, cuéntame <em>dónde estás.</em></h1>
+      <p class="ayuda" data-en="Six questions. There are no right answers and you don’t need to show up with anything in order: write the way you talk. With this I prepare our first session, so we work on your business from minute one.">Son seis preguntas. No hay respuestas correctas ni hace falta que llegues con nada ordenado: escribe como hablas. Con esto preparo nuestra primera sesión, para que desde el minuto uno trabajemos en lo tuyo.</p>
+      <ul class="datos">
+        <li data-en="About &lt;b&gt;10 minutes&lt;/b&gt;">Unos <b>10 minutos</b></li>
+        <li data-en="&lt;b&gt;One question&lt;/b&gt; at a time"><b>Una pregunta</b> a la vez</li>
+        <li data-en="Saved on this device &lt;b&gt;as you type&lt;/b&gt;">Se guarda en este dispositivo <b>mientras escribes</b></li>
+      </ul>
+      <div class="acciones">
+        <button class="btn" type="button" id="empezar" data-en="Start &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;#i-flecha&quot;/&gt;&lt;/svg&gt;">Empezar <svg aria-hidden="true"><use href="#i-flecha"/></svg></button>
+        <p class="nota" id="retomar" hidden data-en="You have saved answers: you’ll pick up where you left off.">Tienes respuestas guardadas: sigues donde lo dejaste.</p>
+      </div>
+    </section>
+
+    <div class="paso" role="group" aria-labelledby="q-datos" data-paso="datos" hidden>
+      <p class="ceja"><b>01</b><span data-en="You">Tú</span></p>
+      <h2 class="preg" id="q-datos" data-en="First, &lt;em&gt;who’s writing?&lt;/em&gt;">Primero, <em>¿quién escribe?</em></h2>
+      <p class="ayuda" data-en="Use the same email you booked or paid with, so your brief reaches your file.">Usa el mismo correo con el que reservaste o pagaste, así tu brief llega a tu ficha.</p>
+      <div class="dos">
+        <div class="campo">
+          <label for="b-nombre" data-en="Your name">Tu nombre</label>
+          <input id="b-nombre" name="nombre" type="text" autocomplete="name" required minlength="2" placeholder="Nombre y apellido" data-en-placeholder="First and last name" aria-describedby="b-nombre-err">
+          <p class="err" id="b-nombre-err" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="b-correo" data-en="Your email">Tu correo</label>
+          <input id="b-correo" name="correo" type="email" autocomplete="email" inputmode="email" required placeholder="tu@correo.com" data-en-placeholder="you@email.com" aria-describedby="b-correo-err">
+          <p class="err" id="b-correo-err" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="trampa" aria-hidden="true"><label for="b-web">Web</label><input id="b-web" name="web" type="text" tabindex="-1" autocomplete="off"></div>
+    </div>
+
+    <div class="paso" role="group" aria-labelledby="q-objetivo" data-paso="objetivo" hidden>
+      <p class="ceja"><b>02</b><span data-en="The destination">El destino</span></p>
+      <h2 class="preg" id="q-objetivo" data-en="What do you want to achieve &lt;em&gt;in these 8 weeks?&lt;/em&gt;">¿Qué quieres lograr <em>en estas 8 semanas?</em></h2>
+      <p class="ayuda" data-en="Picture the day after our last session: what would have to be different for you to say it was worth it?">Piensa en el día después de la última sesión: ¿qué tendría que haber cambiado para que digas que valió la pena?</p>
+      <div class="campo">
+        <label class="sr" for="b-objetivo" data-en="What you want to achieve">Lo que quieres lograr</label>
+        <textarea id="b-objetivo" name="objetivo" rows="3" required placeholder="Escribe aquí…" data-en-placeholder="Write here…" aria-describedby="b-objetivo-err"></textarea>
+        <p class="err" id="b-objetivo-err" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="paso" role="group" aria-labelledby="q-situacion_actual" data-paso="situacion_actual" hidden>
+      <p class="ceja"><b>03</b><span data-en="The starting point">El punto de partida</span></p>
+      <h2 class="preg" id="q-situacion_actual" data-en="How is your business &lt;em&gt;or your brand today?&lt;/em&gt;">¿Cómo está hoy tu negocio <em>o tu marca?</em></h2>
+      <p class="ayuda" data-en="What you sell, to whom, since when, and how clients find you today. No polishing.">Qué vendes, a quién, desde cuándo y cómo te llegan hoy los clientes. Sin maquillarlo.</p>
+      <div class="campo">
+        <label class="sr" for="b-situacion" data-en="How your business is today">Cómo está hoy tu negocio</label>
+        <textarea id="b-situacion" name="situacion_actual" rows="3" required placeholder="Escribe aquí…" data-en-placeholder="Write here…" aria-describedby="b-situacion-err"></textarea>
+        <p class="err" id="b-situacion-err" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="paso" role="group" aria-labelledby="q-mayor_caos" data-paso="mayor_caos" hidden>
+      <p class="ceja"><b>04</b><span data-en="The noise">El ruido</span></p>
+      <h2 class="preg" id="q-mayor_caos" data-en="Where do you feel &lt;em&gt;the most chaos?&lt;/em&gt;">¿Dónde sientes <em>más caos?</em></h2>
+      <p class="ayuda" data-en="Offer, pricing, content, processes, tools, your calendar… Whatever weighs on you most, even if you can’t quite name it.">Oferta, precios, contenido, procesos, herramientas, tu agenda… Lo que más te pesa, aunque no sepas nombrarlo bien.</p>
+      <div class="campo">
+        <label class="sr" for="b-caos" data-en="Where you feel the most chaos">Dónde sientes más caos</label>
+        <textarea id="b-caos" name="mayor_caos" rows="3" required placeholder="Escribe aquí…" data-en-placeholder="Write here…" aria-describedby="b-caos-err"></textarea>
+        <p class="err" id="b-caos-err" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="paso" role="group" aria-labelledby="q-herramientas" data-paso="herramientas" hidden>
+      <p class="ceja"><b>05</b><span data-en="Your desk">Tu escritorio</span></p>
+      <h2 class="preg" id="q-herramientas" data-en="What tools &lt;em&gt;do you use today?&lt;/em&gt; &lt;span class=&quot;opc&quot;&gt;optional&lt;/span&gt;">¿Qué herramientas <em>usas hoy?</em> <span class="opc">opcional</span></h2>
+      <p class="ayuda" data-en="Wherever your business lives right now: Notion, Canva, WhatsApp, Excel, a notebook, ChatGPT… It all counts.">Donde hoy vive tu negocio: Notion, Canva, WhatsApp, Excel, una libreta, ChatGPT… Todo cuenta.</p>
+      <div class="campo">
+        <label class="sr" for="b-herramientas" data-en="Tools you use today">Herramientas que usas hoy</label>
+        <input id="b-herramientas" name="herramientas" type="text" maxlength="250" placeholder="Sepáralas con comas" data-en-placeholder="Separate them with commas" aria-describedby="b-herramientas-err">
+        <p class="err" id="b-herramientas-err" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="paso" role="group" aria-labelledby="q-disponibilidad" data-paso="disponibilidad" hidden>
+      <p class="ceja"><b>06</b><span data-en="Your calendar">Tu agenda</span></p>
+      <h2 class="preg" id="q-disponibilidad" data-en="Which days and times &lt;em&gt;work for our sessions?&lt;/em&gt;">¿Qué días y horas <em>puedes tener sesión?</em></h2>
+      <p class="ayuda" data-en="Give me two or three slots that usually work each week.">Dime dos o tres franjas que te suelan servir cada semana.</p>
+      <div class="campo">
+        <label class="sr" for="b-disponibilidad" data-en="Days and times you’re available">Días y horas en que puedes</label>
+        <textarea id="b-disponibilidad" name="disponibilidad" rows="2" required placeholder="Ej.: martes y jueves por la mañana" data-en-placeholder="E.g. Tuesday and Thursday mornings" aria-describedby="b-disponibilidad-err b-zona"></textarea>
+        <p class="err" id="b-disponibilidad-err" aria-live="polite"></p>
+        <p class="nota" id="b-zona" hidden></p>
+      </div>
+    </div>
+
+    <div class="paso" role="group" aria-labelledby="q-comentarios" data-paso="comentarios" hidden>
+      <p class="ceja"><b>07</b><span data-en="Before landing">Antes de aterrizar</span></p>
+      <h2 class="preg" id="q-comentarios" data-en="Anything else &lt;em&gt;I should know?&lt;/em&gt; &lt;span class=&quot;opc&quot;&gt;optional&lt;/span&gt;">¿Algo más <em>que deba saber?</em> <span class="opc">opcional</span></h2>
+      <p class="ayuda" data-en="Something that worries you, something you already tried that didn’t work, or how you prefer us to work together.">Algo que te preocupe, algo que ya probaste y no funcionó, o cómo prefieres que trabajemos.</p>
+      <div class="campo">
+        <label class="sr" for="b-comentarios" data-en="Anything else">Algo más</label>
+        <textarea id="b-comentarios" name="comentarios" rows="3" placeholder="Escribe aquí, o envía así…" data-en-placeholder="Write here, or send as is…" aria-describedby="b-comentarios-err"></textarea>
+        <p class="err" id="b-comentarios-err" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <section class="paso final" data-paso="final" aria-labelledby="t-final" hidden>
+      <p class="ceja" data-en="Brief received">Brief recibido</p>
+      <h1 class="preg" id="t-final" tabindex="-1" data-en="Got it. &lt;em&gt;You’ve landed.&lt;/em&gt;">Recibido. <em>Ya estás en tierra.</em></h1>
+      <p class="ayuda" id="final-txt"></p>
+      <div class="acciones">
+        <a class="btn btn-crema" href="../" data-en="Back to the website &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;#i-flecha&quot;/&gt;&lt;/svg&gt;">Volver a la web <svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+      </div>
+    </section>
+
+  </form>
+</main>
+
+<footer class="barra" id="barra" hidden>
+  <p class="estado" id="estado" role="status" aria-live="polite"></p>
+  <div class="barra-in">
+    <button class="atras-btn" type="button" id="atras"><svg aria-hidden="true"><use href="#i-atras"/></svg><span data-en="Back">Atrás</span></button>
+    <p class="tecla" id="tecla" aria-hidden="true"></p>
+    <button class="btn" type="button" id="sigue"><span id="sigue-txt">Siguiente</span> <svg aria-hidden="true"><use href="#i-flecha"/></svg></button>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  const d = document, raiz = d.documentElement;
+  const f = d.getElementById('brief');
+  const pasos = [...f.querySelectorAll('.paso')];
+  const PREG = pasos.length - 2;                 // pasos con campos (sin bienvenida ni final)
+  const CLAVE = 'nl-brief-v1';
+  const CAMPOS = ['nombre', 'correo', 'objetivo', 'situacion_actual', 'mayor_caos', 'herramientas', 'disponibilidad', 'comentarios'];
+  /* El descenso: un tono por paso, del cielo a la arena. El último (café) es el aterrizaje. */
+  const FONDOS = ['#EDF2F8', '#EAF0F6', '#ECEFF0', '#F0EFE9', '#F4EEE2', '#F5EBDA', '#F4E6D0', '#F2E0C5', '#2E1912'];
+  const mac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+  const zona = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (_) { return ''; } })();
+  const qs = new URLSearchParams(location.search);
+
+  const $ = id => d.getElementById(id);
+  const barra = $('barra'), atras = $('atras'), sigue = $('sigue'), sigueTxt = $('sigue-txt'), tecla = $('tecla');
+  const cuenta = $('cuenta'), progreso = $('progreso'), estado = $('estado');
+  let actual = 0, enviando = false;
+
+  /* ---------- Idioma: mismo patrón data-en que la home ---------- */
+  let lang = 'es';
+  const tx = (es, en) => lang === 'en' ? en : es;
+  const ATR = ['aria-label', 'placeholder'];
+  const traducir = () => {
+    d.querySelectorAll('[data-en]').forEach(el => {
+      if (el.dataset.es === undefined) el.dataset.es = el.innerHTML;
+      el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.es;
+    });
+    ATR.forEach(a => {
+      const k = 'en' + a.replace(/(^|-)(\w)/g, (_, __, c) => c.toUpperCase()), ko = 'es' + k.slice(2);
+      d.querySelectorAll(`[data-en-${a}]`).forEach(el => {
+        if (el.dataset[ko] === undefined) el.dataset[ko] = el.getAttribute(a);
+        el.setAttribute(a, lang === 'en' ? el.dataset[k] : el.dataset[ko]);
+      });
+    });
+    raiz.lang = lang;
+    d.title = tx('Brief de inicio · Nathaly Lombardi', 'Kickoff brief · Nathaly Lombardi');
+    d.querySelectorAll('.idioma button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    const z = $('b-zona');
+    if (zona) { z.hidden = false; z.textContent = tx(`Lo leo en tu zona horaria: ${zona.replace(/_/g, ' ')}. Si es otra, dímelo aquí.`, `I’ll read it in your time zone: ${zona.replace(/_/g, ' ')}. If it’s a different one, tell me here.`); }
+    f.querySelectorAll('[aria-invalid="true"]').forEach(validar);
+    pintar();
+  };
+  const elegirIdioma = (l, guardar) => {
+    lang = l === 'en' ? 'en' : 'es';
+    if (guardar) { try { localStorage.setItem('idioma', lang); } catch (_) {} }
+    traducir();
+  };
+  d.querySelectorAll('.idioma button').forEach(b => b.addEventListener('click', () => elegirIdioma(b.dataset.lang, true)));
+
+  /* ---------- Guardado local: se puede cerrar y volver ---------- */
+  const leer = () => { try { return JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (_) { return {}; } };
+  const guardar = () => {
+    const v = {}; CAMPOS.forEach(n => { v[n] = f.elements[n].value; });
+    try { localStorage.setItem(CLAVE, JSON.stringify({ v, paso: actual, c: clienta })); } catch (_) {}
+  };
+  const previo = leer();
+  /* `c` identifica a la clienta en PerfectFlow: lo pone el flujo que envía el enlace. */
+  const clienta = qs.get('c') || previo.c || '';
+  CAMPOS.forEach(n => {
+    const el = f.elements[n], guardado = previo.v && previo.v[n];
+    el.value = guardado || qs.get(n) || '';
+  });
+  let t; f.addEventListener('input', () => { clearTimeout(t); t = setTimeout(guardar, 350); });
+
+  /* ---------- Validación ---------- */
+  const falta = (es, en) => el => el.validity.valueMissing || !el.value.trim() ? tx(es, en) : '';
+  const mensajes = {
+    nombre: el => !el.value.trim() ? tx('Dime tu nombre para saber de quién es este brief.', 'Tell me your name so I know whose brief this is.') : el.value.trim().length < 2 ? tx('Tu nombre, completo o como te llamen.', 'Your name, in full or whatever people call you.') : '',
+    correo: el => !el.value.trim() ? tx('Necesito tu correo para enlazar el brief con tu ficha.', 'I need your email to link the brief to your file.') : el.validity.typeMismatch ? tx('Ese correo no parece completo. Revisa la @ y el dominio.', 'That email doesn’t look complete. Check the @ and the domain.') : '',
+    objetivo: falta('Aunque sea una frase: ¿qué quieres que cambie?', 'Even one sentence: what do you want to change?'),
+    situacion_actual: falta('Cuéntame algo de dónde estás hoy, aunque sea corto.', 'Tell me something about where you are today, even briefly.'),
+    mayor_caos: falta('Nombra al menos una cosa que hoy te pese.', 'Name at least one thing weighing on you today.'),
+    disponibilidad: falta('Dime al menos un día y una franja que te sirvan.', 'Give me at least one day and time that works.')
+  };
+  function validar(el) {
+    const msg = mensajes[el.name] ? mensajes[el.name](el) : '';
+    const err = $(el.id + '-err'); if (err) err.textContent = msg;
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false'); return !msg;
+  }
+  const camposDe = p => [...p.querySelectorAll('input:not([name=web]),textarea')];
+  f.addEventListener('input', ev => { if (ev.target.getAttribute('aria-invalid') === 'true') validar(ev.target); });
+
+  /* ---------- Navegación ---------- */
+  function pintar() {
+    const ultimo = actual === PREG, enPreg = actual >= 1 && actual <= PREG;
+    barra.hidden = !enPreg; cuenta.hidden = !enPreg;
+    if (enPreg) cuenta.textContent = tx(`${actual} de ${PREG}`, `${actual} of ${PREG}`);
+    const hecho = Math.min(Math.max(actual - 1, 0), PREG);
+    progreso.style.setProperty('--p', actual > PREG ? 1 : hecho / PREG);
+    progreso.setAttribute('aria-valuenow', actual > PREG ? PREG : hecho);
+    sigueTxt.textContent = enviando ? tx('Enviando…', 'Sending…') : ultimo ? tx('Enviar mi brief', 'Send my brief') : tx('Siguiente', 'Next');
+    const area = enPreg && pasos[actual].querySelector('textarea');
+    tecla.innerHTML = area ? `<kbd>${mac ? '⌘' : 'Ctrl'}</kbd> + <kbd>Enter</kbd> ${tx('para seguir', 'to continue')}` : `<kbd>Enter</kbd> ${tx('para seguir', 'to continue')}`;
+    $('final-txt').innerHTML = tx(
+      `Gracias${nombreCorto() ? ', ' + nombreCorto() : ''}. Leo tu brief antes de nuestra primera sesión, así llegamos directo a lo importante. Si se te ocurre algo más, escríbeme a <a href="mailto:hola@nathalylombardi.com">hola@nathalylombardi.com</a>.`,
+      `Thank you${nombreCorto() ? ', ' + nombreCorto() : ''}. I’ll read your brief before our first session, so we go straight to what matters. If anything else comes to mind, write to <a href="mailto:hola@nathalylombardi.com">hola@nathalylombardi.com</a>.`);
+  }
+  const limpio = s => s.replace(/[<>&"']/g, '');
+  function nombreCorto() { return limpio(f.elements.nombre.value.trim().split(/\s+/)[0] || ''); }
+
+  function ir(n, enfocar = true) {
+    const hacia = n < actual;
+    pasos[actual].hidden = true;
+    actual = n;
+    const p = pasos[actual];
+    p.classList.toggle('atras', hacia);
+    p.hidden = false;
+    raiz.style.setProperty('--bg', FONDOS[actual]);
+    raiz.style.setProperty('--glow', Math.min(actual / PREG, 1).toFixed(2));
+    raiz.classList.toggle('tierra', actual > PREG);
+    d.querySelector('meta[name=theme-color]').content = FONDOS[actual];
+    estado.className = 'estado'; estado.textContent = '';
+    pintar();
+    scrollTo(0, 0);
+    if (enfocar) {
+      const foco = p.querySelector('input:not([name=web]),textarea') || p.querySelector('h1');
+      if (foco) foco.focus({ preventScroll: true });
+    }
+    if (actual <= PREG) guardar();
+  }
+
+  function avanzar() {
+    if (enviando) return;
+    const campos = camposDe(pasos[actual]);
+    const mal = campos.filter(el => !validar(el));
+    if (mal.length) { mal[0].focus(); return; }
+    if (actual === PREG) enviar(); else ir(actual + 1);
+  }
+
+  $('empezar').addEventListener('click', () => ir(Math.min(Math.max(previo.paso || 1, 1), PREG)));
+  sigue.addEventListener('click', avanzar);
+  atras.addEventListener('click', () => { if (!enviando) ir(actual - 1, actual - 1 > 0); });
+  f.addEventListener('submit', ev => { ev.preventDefault(); avanzar(); });
+  f.addEventListener('keydown', ev => {
+    if (ev.key !== 'Enter' || ev.isComposing) return;
+    const area = ev.target.tagName === 'TEXTAREA';
+    if (area && !(ev.metaKey || ev.ctrlKey)) return;   // en respuestas largas, Enter es salto de línea
+    if (ev.target.tagName === 'INPUT' || area) { ev.preventDefault(); avanzar(); }
+  });
+
+  /* ---------- Envío a Activepieces ---------- */
+  async function enviar() {
+    const datos = { clienta_id: clienta };
+    CAMPOS.forEach(n => { datos[n] = f.elements[n].value.trim(); });
+    Object.assign(datos, { zona_horaria: zona, idioma: lang, origen: 'nathalylombardi.com/briefing', enviado_en: new Date().toISOString() });
+    enviando = true; sigue.setAttribute('aria-busy', 'true'); pintar();
+    try {
+      // Campo trampa relleno = bot: se le da el final sin enviar nada.
+      if (!f.elements.web.value) {
+        const r = await fetch(f.dataset.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) });
+        if (!r.ok) throw new Error(r.status);
+      }
+      try { localStorage.removeItem(CLAVE); } catch (_) {}
+      window.gtag && window.gtag('event', 'brief_enviado', { event_category: 'formulario' });
+      enviando = false; sigue.removeAttribute('aria-busy');
+      ir(PREG + 1);
+    } catch (_) {
+      enviando = false; sigue.removeAttribute('aria-busy'); pintar();
+      const cuerpo = CAMPOS.map(n => `${n}: ${datos[n]}`).join('\n\n');
+      const correo = `mailto:hola@nathalylombardi.com?subject=${encodeURIComponent(tx('Mi brief de inicio', 'My kickoff brief'))}&body=${encodeURIComponent(cuerpo)}`;
+      estado.className = 'estado mal';
+      estado.innerHTML = tx(
+        `No se pudo enviar ahora mismo. Tus respuestas siguen guardadas: inténtalo de nuevo en un momento o <a href="${correo}">envíalas por correo</a>.`,
+        `It couldn’t be sent right now. Your answers are still saved: try again in a moment or <a href="${correo}">send them by email</a>.`);
+    }
+  }
+
+  /* ---------- Arranque ---------- */
+  const hayGuardado = previo.v && CAMPOS.some(n => previo.v[n]);
+  $('retomar').hidden = !hayGuardado;
+  let pedido = null; try { pedido = localStorage.getItem('idioma'); } catch (_) {}
+  elegirIdioma(qs.get('lang') || pedido, false);   // español salvo que se pida inglés, como la home
+})();
+</script>
+</body>
+</html>
