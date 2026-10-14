@@ -962,8 +962,8 @@ html.estatico .cierre{background:var(--ladrillo);color:var(--crema)}
       <p class="ceja">Directo de mi escritorio</p>
       <h2 id="esc-t" data-posar>Te ahorro horas <em>de investigación.</em></h2>
       <p class="lead" data-rev>Recibe mis updates: análisis, herramientas y recursos sobre estrategia, inteligencia artificial y negocios digitales.</p>
-      <!-- PENDIENTE: conectar data-endpoint (Activepieces u otro). Vacío = se abre un correo a hola@ con la solicitud. -->
-      <form class="form" id="news" data-endpoint="" novalidate>
+      <!-- data-endpoint = webhook del flujo «Alta al newsletter» en Activepieces: crea la ficha en Usuarios Suscritos al Newsletter. Vacío = se abre un correo a hola@ con la solicitud. -->
+      <form class="form" id="news" data-endpoint="https://automation.nathaly-vozia.perfectflow.cloud/api/v1/webhooks/xN4i1OWkdYZEvNdy8GEr3" novalidate>
         <div class="campos">
           <div class="campo">
             <label for="n-nombre">Tu nombre</label>
