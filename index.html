@@ -321,6 +321,8 @@ html.mov .escena{position:sticky;top:0;height:100svh;padding-top:calc(68px + 1re
 @media (min-width:760px){.principio{padding:var(--s-6) var(--s-5)}}
 .principio .rom{display:block;font-family:var(--f-acento);font-style:italic;font-weight:300;font-size:clamp(3rem,5vw,4.2rem);line-height:1;color:var(--acento);margin-bottom:var(--s-4);transition:transform var(--d-3) var(--e-land)}
 .principio:hover .rom{transform:translateY(-4px) rotate(-4deg)}
+.principio .fase svg{display:block;width:clamp(2.4rem,3.6vw,3.1rem);height:auto;fill:none;stroke:currentColor;stroke-width:1.4}
+.principio .fase .luz{fill:currentColor;stroke:none}
 .principio h3{font-size:1.3rem;letter-spacing:-.025em;line-height:1.1;margin-bottom:.6rem}
 .principio p{color:var(--ink-2);font-size:var(--t-small);line-height:1.55}
 
@@ -703,15 +705,15 @@ html.estatico .cierre{background:var(--ladrillo);color:var(--crema)}
     <div class="metodo-cab">
       <div>
         <p class="ceja"><b>02</b> El método</p>
-        <h2 id="metodo-t" data-posar>Miro tu negocio como <em>se mira un país.</em></h2>
+        <h2 id="metodo-t" data-posar>Analizo tu proyecto como <em>se analiza un país.</em></h2>
       </div>
       <p class="lead" data-rev>Soy politóloga. Esa formación me enseñó a observar sistemas, leer contextos y conectar variables antes de decidir. Hoy aplico esa forma de pensar a marcas, ofertas, contenido e inteligencia artificial.</p>
     </div>
     <ol class="principios">
-      <li class="principio" data-rev><span class="rom" aria-hidden="true">i</span><h3>Primero, el contexto.</h3><p>Antes de recomendarte nada, entiendo dónde estás, qué tienes y qué te está frenando de verdad.</p></li>
-      <li class="principio" data-rev style="--rd:90ms"><span class="rom" aria-hidden="true">ii</span><h3>Del caos, al orden.</h3><p>Ponemos todo sobre la mesa y decidimos qué importa ahora. Lo demás espera, o se va.</p></li>
-      <li class="principio" data-rev style="--rd:180ms"><span class="rom" aria-hidden="true">iii</span><h3>Estructura para sostenerlo.</h3><p>Crecer sin estructura es cansarse más rápido. Lo que construimos tiene que aguantar tu día a día.</p></li>
-      <li class="principio" data-rev style="--rd:270ms"><span class="rom" aria-hidden="true">iv</span><h3>La IA, con criterio.</h3><p>La inteligencia artificial multiplica lo que haces, pero solo si antes sabes qué hacer.</p></li>
+      <li class="principio" data-rev><span class="rom fase" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></span><h3>Primero, el contexto.</h3><p>Antes de recomendarte nada, entiendo dónde estás, qué tienes y qué te está frenando de verdad.</p></li>
+      <li class="principio" data-rev style="--rd:90ms"><span class="rom fase" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path class="luz" d="M12 12V2a10 10 0 0 1 10 10z"/></svg></span><h3>Del caos, al orden.</h3><p>Ponemos todo sobre la mesa y decidimos qué importa ahora. Lo demás espera, o se va.</p></li>
+      <li class="principio" data-rev style="--rd:180ms"><span class="rom fase" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path class="luz" d="M12 2a10 10 0 0 1 0 20z"/></svg></span><h3>Estructura para sostenerlo.</h3><p>Crecer sin estructura es cansarse más rápido. Lo que construimos tiene que aguantar tu día a día.</p></li>
+      <li class="principio" data-rev style="--rd:270ms"><span class="rom fase" aria-hidden="true"><svg viewBox="0 0 24 24"><circle class="luz" cx="12" cy="12" r="10"/></svg></span><h3>La IA, con criterio.</h3><p>La inteligencia artificial multiplica lo que haces, pero solo si antes sabes qué hacer.</p></li>
     </ol>
   </div>
 </section>
