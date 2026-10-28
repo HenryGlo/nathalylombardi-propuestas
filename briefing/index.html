@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Brief de inicio · Nathaly Lombardi</title>
-<meta name="description" content="Seis preguntas para que Nathaly prepare vuestra primera sesión. Se responde con calma y se guarda mientras escribes.">
+<meta name="description" content="Cuéntale a Nathaly tu punto de partida antes de vuestra primera sesión. Unos 10 minutos, una pregunta a la vez.">
 <!-- Página privada: solo llega quien recibe el enlace después de pagar. -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#EDF2F8">
@@ -202,23 +202,26 @@ form{flex:1;display:flex}
 
     <section class="paso" data-paso="inicio" aria-labelledby="t-inicio">
       <p class="ceja" data-en="Kickoff brief">Brief de inicio</p>
-      <h1 class="preg" id="t-inicio" tabindex="-1" data-en="Before we meet, tell me &lt;em&gt;where you are.&lt;/em&gt;">Antes de vernos, cuéntame <em>dónde estás.</em></h1>
-      <p class="ayuda" data-en="Six questions. There are no right answers and you don’t need to show up with anything in order: write the way you talk. With this I prepare our first session, so we work on your business from minute one.">Son seis preguntas. No hay respuestas correctas ni hace falta que llegues con nada ordenado: escribe como hablas. Con esto preparo nuestra primera sesión, para que desde el minuto uno trabajemos en lo tuyo.</p>
+      <h1 class="preg" id="t-inicio" tabindex="-1" data-en="Before we meet, tell me &lt;em&gt;your starting point.&lt;/em&gt;">Antes de vernos, cuéntame <em>tu punto de partida.</em></h1>
+      <p class="ayuda" data-en="I want to get to know you a little better, your business and what you’d like to achieve working together.">Quiero conocer un poquito más de ti, de tu negocio y de lo que te gustaría lograr trabajando juntas.</p>
+      <p class="ayuda" data-en="To reach that dream destination, and take every plane that gets us there, we need to understand where we’re starting from.">Para llegar a ese destino soñado y tomar todos los aviones que nos lleven a él debemos entender desde donde partimos.</p>
+      <p class="ayuda" data-en="You don’t need to have it all figured out or overthink your answers. Write to me as if we were chatting on WhatsApp.">No necesitas tener todo claro ni pensar demasiado las respuestas. Escríbeme como si estuviéramos conversando por WhatsApp.</p>
+      <p class="ayuda" data-en="That way I can prepare our first session and spend our time on what you really need.">Así puedo preparar nuestra primera sesión y aprovechar el tiempo en lo que realmente necesitas.</p>
       <ul class="datos">
-        <li data-en="About &lt;b&gt;10 minutes&lt;/b&gt;">Unos <b>10 minutos</b></li>
+        <li data-en="About &lt;b&gt;10 minutes&lt;/b&gt;"><b>10 minutos</b> aproximadamente</li>
         <li data-en="&lt;b&gt;One question&lt;/b&gt; at a time"><b>Una pregunta</b> a la vez</li>
-        <li data-en="Saved on this device &lt;b&gt;as you type&lt;/b&gt;">Se guarda en este dispositivo <b>mientras escribes</b></li>
+        <li data-en="Your answers are saved &lt;b&gt;as you type&lt;/b&gt;">Tus respuestas se van guardando <b>mientras escribes</b></li>
       </ul>
       <div class="acciones">
-        <button class="btn" type="button" id="empezar" data-en="Start &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;#i-flecha&quot;/&gt;&lt;/svg&gt;">Empezar <svg aria-hidden="true"><use href="#i-flecha"/></svg></button>
+        <button class="btn" type="button" id="empezar" data-en="Let’s begin! &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;#i-flecha&quot;/&gt;&lt;/svg&gt;">¡Empecemos! <svg aria-hidden="true"><use href="#i-flecha"/></svg></button>
         <p class="nota" id="retomar" hidden data-en="You have saved answers: you’ll pick up where you left off.">Tienes respuestas guardadas: sigues donde lo dejaste.</p>
       </div>
     </section>
 
     <div class="paso" role="group" aria-labelledby="q-datos" data-paso="datos" hidden>
-      <p class="ceja"><b>01</b><span data-en="You">Tú</span></p>
-      <h2 class="preg" id="q-datos" data-en="First, &lt;em&gt;who’s writing?&lt;/em&gt;">Primero, <em>¿quién escribe?</em></h2>
-      <p class="ayuda" data-en="Use the same email you booked or paid with, so your brief reaches your file.">Usa el mismo correo con el que reservaste o pagaste, así tu brief llega a tu ficha.</p>
+      <p class="ceja"><b>01</b><span data-en="Your details">Tus datos</span></p>
+      <h2 class="preg" id="q-datos" data-en="First, &lt;em&gt;who’s here?&lt;/em&gt;">Primero, <em>¿quién está por aquí?</em></h2>
+      <p class="ayuda" data-en="Leave me your name and the email you signed up with, so I can match your answers and have them at hand before our session.">Déjame tu nombre y el correo con el que te inscribiste, así puedo identificar tus respuestas y tenerlas a mano antes de nuestra sesión.</p>
       <div class="dos">
         <div class="campo">
           <label for="b-nombre" data-en="Your name">Tu nombre</label>
@@ -226,7 +229,7 @@ form{flex:1;display:flex}
           <p class="err" id="b-nombre-err" aria-live="polite"></p>
         </div>
         <div class="campo">
-          <label for="b-correo" data-en="Your email">Tu correo</label>
+          <label for="b-correo" data-en="Your email">Tu correo electrónico</label>
           <input id="b-correo" name="correo" type="email" autocomplete="email" inputmode="email" required placeholder="tu@correo.com" data-en-placeholder="you@email.com" aria-describedby="b-correo-err">
           <p class="err" id="b-correo-err" aria-live="polite"></p>
         </div>
@@ -235,76 +238,82 @@ form{flex:1;display:flex}
     </div>
 
     <div class="paso" role="group" aria-labelledby="q-objetivo" data-paso="objetivo" hidden>
-      <p class="ceja"><b>02</b><span data-en="The destination">El destino</span></p>
-      <h2 class="preg" id="q-objetivo" data-en="What do you want to achieve &lt;em&gt;in these 8 weeks?&lt;/em&gt;">¿Qué quieres lograr <em>en estas 8 semanas?</em></h2>
-      <p class="ayuda" data-en="Picture the day after our last session: what would have to be different for you to say it was worth it?">Piensa en el día después de la última sesión: ¿qué tendría que haber cambiado para que digas que valió la pena?</p>
+      <p class="ceja"><b>02</b><span data-en="What you want to achieve">Lo que quieres lograr</span></p>
+      <h2 class="preg" id="q-objetivo" data-en="What would you like to have achieved &lt;em&gt;in these 8 weeks?&lt;/em&gt;">¿Qué te gustaría haber logrado <em>en estas 8 semanas?</em></h2>
+      <p class="ayuda" data-en="Think about what you’d like to have ready, improve or finally get going.">Piensa en lo que te gustaría tener listo, mejorar o finalmente poner en marcha.</p>
+      <p class="ayuda" data-en="What would have to happen for you to feel, when we finish, that you really moved forward?">¿Qué tendría que pasar para que, al terminar nuestro acompañamiento, sientas que avanzaste de verdad?</p>
       <div class="campo">
         <label class="sr" for="b-objetivo" data-en="What you want to achieve">Lo que quieres lograr</label>
-        <textarea id="b-objetivo" name="objetivo" rows="3" required placeholder="Escribe aquí…" data-en-placeholder="Write here…" aria-describedby="b-objetivo-err"></textarea>
+        <textarea id="b-objetivo" name="objetivo" rows="3" required placeholder="Cuéntame aquí…" data-en-placeholder="Tell me here…" aria-describedby="b-objetivo-err"></textarea>
         <p class="err" id="b-objetivo-err" aria-live="polite"></p>
       </div>
     </div>
 
     <div class="paso" role="group" aria-labelledby="q-situacion_actual" data-paso="situacion_actual" hidden>
-      <p class="ceja"><b>03</b><span data-en="The starting point">El punto de partida</span></p>
-      <h2 class="preg" id="q-situacion_actual" data-en="How is your business &lt;em&gt;or your brand today?&lt;/em&gt;">¿Cómo está hoy tu negocio <em>o tu marca?</em></h2>
-      <p class="ayuda" data-en="What you sell, to whom, since when, and how clients find you today. No polishing.">Qué vendes, a quién, desde cuándo y cómo te llegan hoy los clientes. Sin maquillarlo.</p>
+      <p class="ceja"><b>03</b><span data-en="Your starting point">Tu punto de partida</span></p>
+      <h2 class="preg" id="q-situacion_actual" data-en="Now tell me, &lt;em&gt;where are you at?&lt;/em&gt;">Ahora cuéntame, <em>¿en qué punto estás?</em></h2>
+      <p class="ayuda" data-en="I want to understand how your business is doing right now. What you do, what you offer, who you sell to and how you’re getting clients.">Quiero entender cómo va tu negocio actualmente. Qué haces, qué ofreces, a quién le vendes y cómo estás consiguiendo clientes.</p>
+      <p class="ayuda" data-en="And if you’re just starting out or still building your idea, I want to know that too.">Y si apenas estás empezando o todavía estás construyendo tu idea, también quiero saberlo.</p>
       <div class="campo">
         <label class="sr" for="b-situacion" data-en="How your business is today">Cómo está hoy tu negocio</label>
-        <textarea id="b-situacion" name="situacion_actual" rows="3" required placeholder="Escribe aquí…" data-en-placeholder="Write here…" aria-describedby="b-situacion-err"></textarea>
+        <textarea id="b-situacion" name="situacion_actual" rows="3" required placeholder="Te leo…" data-en-placeholder="I’m listening…" aria-describedby="b-situacion-err"></textarea>
         <p class="err" id="b-situacion-err" aria-live="polite"></p>
       </div>
     </div>
 
     <div class="paso" role="group" aria-labelledby="q-mayor_caos" data-paso="mayor_caos" hidden>
-      <p class="ceja"><b>04</b><span data-en="The noise">El ruido</span></p>
-      <h2 class="preg" id="q-mayor_caos" data-en="Where do you feel &lt;em&gt;the most chaos?&lt;/em&gt;">¿Dónde sientes <em>más caos?</em></h2>
-      <p class="ayuda" data-en="Offer, pricing, content, processes, tools, your calendar… Whatever weighs on you most, even if you can’t quite name it.">Oferta, precios, contenido, procesos, herramientas, tu agenda… Lo que más te pesa, aunque no sepas nombrarlo bien.</p>
+      <p class="ceja"><b>04</b><span data-en="What’s hardest for you">Lo que más te cuesta</span></p>
+      <h2 class="preg" id="q-mayor_caos" data-en="What’s been &lt;em&gt;the hardest for you?&lt;/em&gt;">¿Qué es lo que más <em>te está costando?</em></h2>
+      <p class="ayuda" data-en="It could be creating content, getting organized, defining your services, finding clients, selling, or simply not knowing where to start.">Puede ser crear contenido, organizarte, definir tus servicios, conseguir clientes, vender o simplemente no saber por dónde empezar.</p>
+      <p class="ayuda" data-en="Tell me what you’ve been wanting to solve for a while and haven’t managed to yet.">Cuéntame qué es eso que llevas tiempo queriendo resolver y todavía no has podido.</p>
       <div class="campo">
         <label class="sr" for="b-caos" data-en="Where you feel the most chaos">Dónde sientes más caos</label>
-        <textarea id="b-caos" name="mayor_caos" rows="3" required placeholder="Escribe aquí…" data-en-placeholder="Write here…" aria-describedby="b-caos-err"></textarea>
+        <textarea id="b-caos" name="mayor_caos" rows="3" required placeholder="Cuéntamelo sin filtros…" data-en-placeholder="Tell me with no filters…" aria-describedby="b-caos-err"></textarea>
         <p class="err" id="b-caos-err" aria-live="polite"></p>
       </div>
     </div>
 
     <div class="paso" role="group" aria-labelledby="q-herramientas" data-paso="herramientas" hidden>
-      <p class="ceja"><b>05</b><span data-en="Your desk">Tu escritorio</span></p>
-      <h2 class="preg" id="q-herramientas" data-en="What tools &lt;em&gt;do you use today?&lt;/em&gt; &lt;span class=&quot;opc&quot;&gt;optional&lt;/span&gt;">¿Qué herramientas <em>usas hoy?</em> <span class="opc">opcional</span></h2>
-      <p class="ayuda" data-en="Wherever your business lives right now: Notion, Canva, WhatsApp, Excel, a notebook, ChatGPT… It all counts.">Donde hoy vive tu negocio: Notion, Canva, WhatsApp, Excel, una libreta, ChatGPT… Todo cuenta.</p>
+      <p class="ceja"><b>05</b><span data-en="Your tools">Tus herramientas</span></p>
+      <h2 class="preg" id="q-herramientas" data-en="What tools &lt;em&gt;do you use right now?&lt;/em&gt; &lt;span class=&quot;opc&quot;&gt;optional&lt;/span&gt;">¿Qué herramientas <em>usas actualmente?</em> <span class="opc">opcional</span></h2>
+      <p class="ayuda" data-en="I want to know what you’re working with: Canva, Notion, Drive, Excel, ChatGPT, WhatsApp, a planner…">Quiero saber con qué estás trabajando: Canva, Notion, Drive, Excel, ChatGPT, WhatsApp, una agenda…</p>
+      <p class="ayuda" data-en="And if everything is spread across a thousand places, that’s worth saying too. The idea is to understand how you get organized today.">Y si tienes todo repartido entre mil lugares, también vale decirlo. La idea es entender cómo te organizas hoy.</p>
       <div class="campo">
         <label class="sr" for="b-herramientas" data-en="Tools you use today">Herramientas que usas hoy</label>
-        <input id="b-herramientas" name="herramientas" type="text" maxlength="250" placeholder="Sepáralas con comas" data-en-placeholder="Separate them with commas" aria-describedby="b-herramientas-err">
+        <input id="b-herramientas" name="herramientas" type="text" maxlength="250" placeholder="Escríbeme las que utilizas…" data-en-placeholder="Write the ones you use…" aria-describedby="b-herramientas-err">
         <p class="err" id="b-herramientas-err" aria-live="polite"></p>
       </div>
     </div>
 
     <div class="paso" role="group" aria-labelledby="q-disponibilidad" data-paso="disponibilidad" hidden>
-      <p class="ceja"><b>06</b><span data-en="Your calendar">Tu agenda</span></p>
-      <h2 class="preg" id="q-disponibilidad" data-en="Which days and times &lt;em&gt;work for our sessions?&lt;/em&gt;">¿Qué días y horas <em>puedes tener sesión?</em></h2>
-      <p class="ayuda" data-en="Give me two or three slots that usually work each week.">Dime dos o tres franjas que te suelan servir cada semana.</p>
+      <p class="ceja"><b>06</b><span data-en="Our sessions">Nuestras sesiones</span></p>
+      <h2 class="preg" id="q-disponibilidad" data-en="Which days and times &lt;em&gt;suit you best?&lt;/em&gt;">¿Qué días y horarios <em>te vienen mejor?</em></h2>
+      <p class="ayuda" data-en="Give me two or three options that usually work for you for our sessions.">Dame dos o tres opciones que normalmente te funcionen para nuestras sesiones.</p>
+      <p class="ayuda" data-en="Tell me which country you’re in too, so we can coordinate times properly.">Cuéntame también en qué país estás para que podamos coordinar bien los horarios.</p>
       <div class="campo">
         <label class="sr" for="b-disponibilidad" data-en="Days and times you’re available">Días y horas en que puedes</label>
-        <textarea id="b-disponibilidad" name="disponibilidad" rows="2" required placeholder="Ej.: martes y jueves por la mañana" data-en-placeholder="E.g. Tuesday and Thursday mornings" aria-describedby="b-disponibilidad-err b-zona"></textarea>
+        <textarea id="b-disponibilidad" name="disponibilidad" rows="2" required placeholder="Por ejemplo: martes y jueves después de las 4 p. m." data-en-placeholder="For example: Tuesday and Thursday after 4 p.m." aria-describedby="b-disponibilidad-err b-zona"></textarea>
         <p class="err" id="b-disponibilidad-err" aria-live="polite"></p>
         <p class="nota" id="b-zona" hidden></p>
       </div>
     </div>
 
     <div class="paso" role="group" aria-labelledby="q-comentarios" data-paso="comentarios" hidden>
-      <p class="ceja"><b>07</b><span data-en="Before landing">Antes de aterrizar</span></p>
-      <h2 class="preg" id="q-comentarios" data-en="Anything else &lt;em&gt;I should know?&lt;/em&gt; &lt;span class=&quot;opc&quot;&gt;optional&lt;/span&gt;">¿Algo más <em>que deba saber?</em> <span class="opc">opcional</span></h2>
-      <p class="ayuda" data-en="Something that worries you, something you already tried that didn’t work, or how you prefer us to work together.">Algo que te preocupe, algo que ya probaste y no funcionó, o cómo prefieres que trabajemos.</p>
+      <p class="ceja"><b>07</b><span data-en="Before we start">Antes de empezar</span></p>
+      <h2 class="preg" id="q-comentarios" data-en="And finally, &lt;em&gt;anything else you’d like to tell me?&lt;/em&gt; &lt;span class=&quot;opc&quot;&gt;optional&lt;/span&gt;">Y por último, <em>¿algo más que quieras contarme?</em> <span class="opc">opcional</span></h2>
+      <p class="ayuda" data-en="Is there something that worries you, something you already tried that didn’t work, or something you’d like me to keep in mind?">¿Hay algo que te preocupe, que ya hayas intentado y no funcionó o que te gustaría que tuviera en cuenta?</p>
+      <p class="ayuda" data-en="If there’s something I didn’t ask and you think it matters, this is the place.">Si hay algo que no te pregunté y consideras importante, este es el espacio.</p>
       <div class="campo">
         <label class="sr" for="b-comentarios" data-en="Anything else">Algo más</label>
-        <textarea id="b-comentarios" name="comentarios" rows="3" placeholder="Escribe aquí, o envía así…" data-en-placeholder="Write here, or send as is…" aria-describedby="b-comentarios-err"></textarea>
+        <textarea id="b-comentarios" name="comentarios" rows="3" placeholder="Te leo…" data-en-placeholder="I’m listening…" aria-describedby="b-comentarios-err"></textarea>
         <p class="err" id="b-comentarios-err" aria-live="polite"></p>
       </div>
     </div>
 
     <section class="paso final" data-paso="final" aria-labelledby="t-final" hidden>
       <p class="ceja" data-en="Brief received">Brief recibido</p>
-      <h1 class="preg" id="t-final" tabindex="-1" data-en="Got it. &lt;em&gt;You’ve landed.&lt;/em&gt;">Recibido. <em>Ya estás en tierra.</em></h1>
-      <p class="ayuda" id="final-txt"></p>
+      <h1 class="preg" id="t-final" tabindex="-1" data-en="Done! &lt;em&gt;We’re a little bit closer now.&lt;/em&gt;">¡Listo! <em>Ya estamos un poquito más cerca.</em></h1>
+      <div id="final-txt"></div>
       <div class="acciones">
         <a class="btn btn-crema" href="../" data-en="Back to the website &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;#i-flecha&quot;/&gt;&lt;/svg&gt;">Volver a la web <svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
       </div>
@@ -362,7 +371,7 @@ form{flex:1;display:flex}
     d.title = tx('Brief de inicio · Nathaly Lombardi', 'Kickoff brief · Nathaly Lombardi');
     d.querySelectorAll('.idioma button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
     const z = $('b-zona');
-    if (zona) { z.hidden = false; z.textContent = tx(`Lo leo en tu zona horaria: ${zona.replace(/_/g, ' ')}. Si es otra, dímelo aquí.`, `I’ll read it in your time zone: ${zona.replace(/_/g, ' ')}. If it’s a different one, tell me here.`); }
+    z.hidden = false; z.textContent = tx('Tomaré como referencia la hora de Canarias. Si estás en otra zona horaria, indícamela aquí.', 'I’ll use Canary Islands time as the reference. If you’re in a different time zone, let me know here.');
     f.querySelectorAll('[aria-invalid="true"]').forEach(validar);
     pintar();
   };
@@ -418,8 +427,8 @@ form{flex:1;display:flex}
     const area = enPreg && pasos[actual].querySelector('textarea');
     tecla.innerHTML = area ? `<kbd>${mac ? '⌘' : 'Ctrl'}</kbd> + <kbd>Enter</kbd> ${tx('para seguir', 'to continue')}` : `<kbd>Enter</kbd> ${tx('para seguir', 'to continue')}`;
     $('final-txt').innerHTML = tx(
-      `Gracias${nombreCorto() ? ', ' + nombreCorto() : ''}. Leo tu brief antes de nuestra primera sesión, así llegamos directo a lo importante. Si se te ocurre algo más, escríbeme a <a href="mailto:hola@nathalylombardi.com">hola@nathalylombardi.com</a>.`,
-      `Thank you${nombreCorto() ? ', ' + nombreCorto() : ''}. I’ll read your brief before our first session, so we go straight to what matters. If anything else comes to mind, write to <a href="mailto:hola@nathalylombardi.com">hola@nathalylombardi.com</a>.`);
+      `<p class="ayuda">Gracias${nombreCorto() ? ', ' + nombreCorto() + ',' : ''} por tomarte estos minutos para contarme cómo vas.</p><p class="ayuda">Voy a revisar tus respuestas antes de nuestra primera sesión para que podamos empezar con claridad y enfocarnos en lo que hoy es más importante para ti.</p><p class="ayuda"><b>Nos vemos pronto.</b><br>Nath</p>`,
+      `<p class="ayuda">Thank you${nombreCorto() ? ', ' + nombreCorto() + ',' : ''} for taking these minutes to tell me how you’re doing.</p><p class="ayuda">I’ll go over your answers before our first session so we can start with clarity and focus on what matters most to you today.</p><p class="ayuda"><b>See you soon.</b><br>Nath</p>`);
   }
   const limpio = s => s.replace(/[<>&"']/g, '');
   function nombreCorto() { return limpio(f.elements.nombre.value.trim().split(/\s+/)[0] || ''); }
